@@ -1,0 +1,129 @@
+.motion-pointer {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  --pointer-accent: #d4fa53;
+}
+
+@media (any-hover: hover) and (any-pointer: fine) and (prefers-reduced-motion: no-preference) and (forced-colors: none) {
+  .motion-pointer-on body,
+  .motion-pointer-on :is(a, button, summary, .gallery, .project-card) {
+    cursor: none;
+  }
+
+  .motion-pointer-on :is(dialog, input, textarea, select, [contenteditable], [data-native-cursor]),
+  .motion-pointer-on :is(dialog, [contenteditable], [data-native-cursor]) * {
+    cursor: revert;
+  }
+
+  .motion-pointer-on .motion-pointer {
+    display: block;
+  }
+
+  .motion-pointer__orbit,
+  .motion-pointer__dot {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 0;
+    will-change: transform;
+  }
+
+  .motion-pointer__dot::before {
+    content: '';
+    position: absolute;
+    inset: -2px auto auto -2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #fbfff0;
+    box-shadow: 0 0 0 1px #141611, 0 0 10px var(--pointer-accent);
+    transition: opacity 140ms ease;
+  }
+
+  .motion-pointer__dial {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #f7ffe3b0;
+    border-radius: 50%;
+    color: #0b1005;
+    box-shadow: 0 0 0 1px #0b100580;
+    transform: translate(-50%, -50%);
+    transition: width 250ms cubic-bezier(.22, 1, .36, 1), height 250ms cubic-bezier(.22, 1, .36, 1), border-radius 250ms ease, background-color 170ms ease, border-color 170ms ease;
+  }
+
+  .motion-pointer__dial::before,
+  .motion-pointer__dial::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 5px;
+    border-top: 1px solid #f7ffe3c7;
+  }
+
+  .motion-pointer__dial::before { left: -4px; }
+  .motion-pointer__dial::after { right: -4px; }
+
+  .motion-pointer[data-mode='control'] .motion-pointer__dial {
+    width: 57px;
+    height: 57px;
+    background: #d4fa531a;
+    border-color: var(--pointer-accent);
+  }
+
+  .motion-pointer[data-mode='gallery'] .motion-pointer__dial {
+    width: 72px;
+    height: 42px;
+    border-radius: 25px;
+    background: var(--pointer-accent);
+    border-color: var(--pointer-accent);
+    box-shadow: 0 6px 20px #0b100550;
+  }
+
+  .motion-pointer[data-mode='gallery'] .motion-pointer__dial::before,
+  .motion-pointer[data-mode='gallery'] .motion-pointer__dial::after,
+  .motion-pointer[data-mode='gallery'] .motion-pointer__dot::before {
+    opacity: 0;
+  }
+
+  .motion-pointer__arrow {
+    position: relative;
+    width: 24px;
+    border-top: 1px solid currentColor;
+    opacity: 0;
+    transform-origin: center;
+    transition: opacity 130ms ease, transform 210ms cubic-bezier(.22, 1, .36, 1);
+  }
+
+  .motion-pointer__arrow::after {
+    content: '';
+    position: absolute;
+    right: 1px;
+    top: -5px;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+    transform: rotate(45deg);
+  }
+
+  .motion-pointer[data-mode='gallery'] .motion-pointer__arrow { opacity: 1; }
+  .motion-pointer[data-direction='left'] .motion-pointer__arrow { transform: rotate(180deg); }
+  .motion-pointer.is-pressed .motion-pointer__dial { scale: .82; }
+
+  .cursor-magnet-arrow {
+    display: inline-block;
+    translate: var(--cursor-arrow-x, 0px) var(--cursor-arrow-y, 0px);
+    transition: translate 180ms cubic-bezier(.22, 1, .36, 1);
+    pointer-events: none;
+  }
+}
