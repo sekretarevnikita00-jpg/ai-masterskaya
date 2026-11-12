@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0c0a">
+<meta name="description" content="AI-мастерская в Самаре для участников 14–20 лет. Создай своего героя, серию кадров и тизер за восемь недель.">
+<title>AI-мастерская — создай свой мир</title>
+<link rel="preload" as="image" href="assets/paint-hero.webp">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="motion.css">
+<link rel="stylesheet" href="cursor.css">
+<link rel="stylesheet" href="atelier.css">
+<script src="program.js" defer></script>
+<script src="tunnel.js" defer></script>
+<script src="atelier-canvas.js" defer></script>
+<script src="site.js" defer></script>
+<script src="cursor.js" defer></script>
+</head>
+<body>
+<div class="atelier-world" aria-hidden="true">
+  <div class="world-hero"></div>
+  <div class="world-plate world-blue"></div>
+  <div class="world-plate world-copper"></div>
+  <div class="world-plate world-violet"></div>
+  <div class="world-depth"></div>
+  <canvas class="atelier-field"></canvas>
+  <div class="world-vignette"></div>
+</div>
+<a class="skip" href="#projects">К содержанию</a>
+<header class="topbar">
+  <a class="logo" href="#top"><span class="sigil" aria-hidden="true">✳</span> AI / МАСТЕРСКАЯ</a>
+  <nav class="main-nav" aria-label="Разделы сайта">
+    <a href="#projects">Проекты</a><a href="#program">Программа</a><a href="#prices">Стоимость</a>
+  </nav>
+  <a class="nav-cta" href="#prices">Как записаться <span aria-hidden="true">↗</span></a>
+  <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-nav"><span></span><span></span></button>
+  <div class="page-progress" aria-hidden="true"></div>
+</header>
+<nav class="mobile-nav" id="mobile-nav" aria-label="Разделы сайта" hidden>
+  <a href="#projects">Проекты</a><a href="#program">Программа</a><a href="#prices">Стоимость</a><a href="#faq">Вопросы</a>
+</nav>
+<main id="top">
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-frame">
+    <div class="hero-art" aria-hidden="true">
+      <div class="portal"><i></i><i></i><i></i><i></i><i></i></div>
+      <canvas class="portal-tunnel"></canvas>
+      <div class="hero-shade"></div>
+      <div class="portal-flash"></div>
+    </div>
+    <div class="flight-frames" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="viewfinder" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="hero-content shell">
+      <p class="eyebrow"><span class="light-dot"></span> НЕЙРОСЕТИ × ТВОРЧЕСТВО <span class="eyebrow-location">· САМАРА · 14–20 ЛЕТ</span></p>
+      <h1 id="hero-title">Создай<br>свой <em>мир<span>.</span></em></h1>
+      <p class="hero-copy">Придумай героя, собери визуальную историю и сделай свой первый тизер с нейросетями за 8 недель.</p>
+      <a class="button lime" href="#program">Смотреть программу <span aria-hidden="true">↘</span></a>
+    </div>
+    <div class="hero-footer shell">
+      <a class="scroll-label" href="#projects"><span class="scroll-orbit" aria-hidden="true"><i></i></span> ЛИСТАЙ, ЧТОБЫ ВОЙТИ</a>
+      <span class="hero-info">САМАРА <b></b> 14–20 ЛЕТ <b></b> 8 ВСТРЕЧ</span>
+    </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects" aria-labelledby="projects-title">
+    <div class="project-stage">
+
+      <div class="project-head shell">
+        <div>
+          <p class="eyebrow"><span class="light-dot"></span> ПРИМЕРЫ ПРОЕКТОВ</p>
+          <h2 id="projects-title">Что ты <br>создашь<span>.</span></h2>
+          <p>Выбери тему, которая тебе близка. Эти концепты показывают, с чего можно начать.</p>
+        </div>
+        <div class="gallery-controls" aria-label="Управление галереей">
+          <button type="button" data-gallery-step="-1" aria-label="Предыдущий проект"><span class="reel-arrow" aria-hidden="true"></span></button>
+          <span class="gallery-count" aria-live="polite">01 / 03</span>
+          <button type="button" data-gallery-step="1" aria-label="Следующий проект"><span class="reel-arrow" aria-hidden="true"></span></button>
+        </div>
+      </div>
+      <div class="gallery" tabindex="0" aria-label="Примеры проектов. Используй стрелки или листай пальцем.">
+        <div class="gallery-track">
+          <article class="project-card world">
+            <div class="card-picture" role="img" aria-label="Концепт города в инопланетном мире"></div>
+            <div class="card-caption"><span>01 / ВИЗУАЛЬНАЯ ИСТОРИЯ</span><h3>Мир игры</h3><p>Герой, локации и тизер приключения.</p></div>
+          </article>
+          <article class="project-card music">
+            <div class="card-picture" role="img" aria-label="Концепт сцены для музыкального видео"></div>
+            <div class="card-caption"><span>02 / АТМОСФЕРА И ЗВУК</span><h3>Музыкальный образ</h3><p>Обложка и короткий ролик в твоём стиле.</p></div>
+          </article>
+          <article class="project-card studio">
+            <div class="card-picture" role="img" aria-label="Концепт предметной съёмки"></div>
+            <div class="card-caption"><span>03 / КОНЦЕПТ И АФИША</span><h3>Визуал для события</h3><p>Айдентика, афиша и анонс своего проекта.</p></div>
+          </article>
+        </div>
+      </div>
+      <div class="reel-footer shell">
+        <p class="gallery-hint"><span class="gallery-desktop">КРУТИ КОЛЕСО</span><span class="gallery-mobile">СВАЙПАЙ КАДРЫ</span></p>
+        <div class="reel-progress" aria-hidden="true"><span></span></div>
+        <a href="#program" class="reel-next">К ПРОГРАММЕ <span aria-hidden="true">↘</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="program shell" id="program" aria-labelledby="program-title">
+    <div class="program-trace" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="section-intro program-intro">
+      <p class="eyebrow"><span class="light-dot"></span> ПРОГРАММА</p>
+      <h2 id="program-title">От первого кадра<br>до премьеры<span>.</span></h2>
+      <p>Одна встреча в неделю по два часа. Между встречами — задание по твоему проекту, разбор и время на правки.</p>
+    </div>
+    <div class="level-tabs" role="tablist" aria-label="Ступени курса">
+      <button class="level-tab" type="button" role="tab" id="level-0" aria-controls="level-content" aria-selected="true" data-level="0"><small>МЕСЯЦЫ 1–2</small><strong>Свой мир</strong><span aria-hidden="true">↘</span></button>
+      <button class="level-tab" type="button" role="tab" id="level-1" aria-controls="level-content" aria-selected="false" tabindex="-1" data-level="1"><small>МЕСЯЦЫ 3–4</small><strong>Своя история</strong><span aria-hidden="true">↘</span></button>
+      <button class="level-tab" type="button" role="tab" id="level-2" aria-controls="level-content" aria-selected="false" tabindex="-1" data-level="2"><small>МЕСЯЦЫ 5–6</small><strong>Своя команда</strong><span aria-hidden="true">↘</span></button>
+    </div>
+    <div class="level-content" id="level-content" role="tabpanel" aria-labelledby="level-0" tabindex="0">
+      <div class="level-summary"><h3 id="level-title">Свой визуальный мир</h3><p id="level-description">Серия из 4–6 изображений, афиша или обложка и тизер на 10–15 секунд.</p></div>
+      <div id="week-list" class="week-list"></div>
+    </div>
+    <div class="feedback">
+      <div><p class="eyebrow">КАК ВИДЕН ПРОГРЕСС</p><h3>От черновика<br>до зачёта.</h3></div>
+      <p>У каждой домашки есть статус и комментарий. До 100 баллов за неделю начисляются за выполнение задачи, навык, обоснование решений и доработку. Рейтинг группы доступен участникам под никами. После правок баллы можно улучшить.</p>
+    </div>
+  </section>
+
+  <section class="prices" id="prices" aria-labelledby="prices-title">
+    <div class="shell">
+      <div class="section-intro">
+        <p class="eyebrow"><span class="light-dot"></span> ПЕРВЫЕ 8 НЕДЕЛЬ</p>
+        <h2 id="prices-title">Выбери пакет<span>.</span></h2>
+        <p>В обоих пакетах — занятия, проверка заданий, рейтинг и финальный показ. Цена указана за четыре встречи.</p>
+      </div>
+      <div class="price-grid">
+        <article class="price-card">
+          <p class="eyebrow">ПЕРВЫЕ 72 ЧАСА ПОСЛЕ ПРЕДЛОЖЕНИЯ</p>
+          <h3>Обучение</h3><p class="amount">5 900 <span>₽</span></p>
+          <p class="price-total">11 800 ₽ за 8 встреч</p>
+          <p class="price-desc">Доступ к нейросетям оформляешь и оплачиваешь самостоятельно. Ранняя цена сохраняется на весь первый блок.</p>
+          <button class="button outline" type="button" data-package="study">Выбрать обучение <span aria-hidden="true">↗</span></button>
+        </article>
+        <article class="price-card featured">
+          <p class="eyebrow">ДОСТУП К ИНСТРУМЕНТАМ ВКЛЮЧЁН</p>
+          <h3>Обучение + нейросети</h3><p class="amount">6 900 <span>₽</span></p>
+          <p class="price-total">13 800 ₽ за 8 встреч</p>
+          <p class="price-desc">Организатор оплачивает согласованный лимит генераций для практики. Сервис и объём доступа сообщаем до оплаты.</p>
+          <button class="button lime" type="button" data-package="tools">Выбрать пакет с AI <span aria-hidden="true">↗</span></button>
+        </article>
+      </div>
+      <p class="price-foot">После окончания срока ранней записи доступен пакет за 6 900 ₽. Продолжение после первого блока — по желанию.</p>
+    </div>
+  </section>
+
+  <section id="faq" class="faq shell" aria-labelledby="faq-title">
+    <div><p class="eyebrow"><span class="light-dot"></span> ПЕРЕД ЗАПИСЬЮ</p><h2 id="faq-title">Вопросы<span>.</span></h2></div>
+    <div class="question-list">
+      <details><summary>Можно прийти без опыта?</summary><p>Да. Первое изображение ты сделаешь вместе с преподавателем. Рисование и монтаж изучаем по ходу проекта.</p></details>
+      <details><summary>Сколько времени нужно на домашку?</summary><p>Ориентир — от полутора до трёх часов в неделю. У каждого задания есть обязательный минимум и усложнение по желанию.</p></details>
+      <details><summary>Что я смогу показать в конце?</summary><p>Серию из 4–6 связанных изображений, афишу или обложку и тизер на 10–15 секунд. На финальном показе расскажешь, как работа прошла от идеи до последней версии.</p></details>
+      <details><summary>Можно записаться только на два месяца?</summary><p>Да. После восьмой встречи у тебя будет законченный проект. Следующие ступени можно выбрать отдельно.</p></details>
+      <details><summary>Где узнать дату старта и расписание?</summary><p>Скопируй сообщение из выбранного пакета и отправь организатору курса. Он уточнит дату, формат, требования к устройству и условия участия.</p></details>
+    </div>
+  </section>
+</main>
+<footer class="footer shell">
+  <a class="logo" href="#top"><span class="sigil" aria-hidden="true">✳</span> AI / МАСТЕРСКАЯ</a>
+  <span>Самара · 14–20 лет</span><a href="#top">Наверх ↑</a>
+</footer>
+<dialog id="enroll-dialog" aria-labelledby="enroll-title">
+  <button class="dialog-close" type="button" aria-label="Закрыть">×</button>
+  <p class="eyebrow"><span class="light-dot"></span> ЗАПИСЬ НА КУРС</p>
+  <h2 id="enroll-title">Твой первый проект<span>.</span></h2>
+  <p id="enroll-package"></p>
+  <p>Скопируй сообщение и отправь организатору курса.</p>
+  <textarea id="enroll-message" rows="4" readonly aria-label="Сообщение для организатора"></textarea>
+  <button id="copy-message" class="button lime" type="button">Скопировать сообщение <span aria-hidden="true">↗</span></button>
+  <p id="copy-status" role="status"></p>
+</dialog>
+</body>
+</html>
